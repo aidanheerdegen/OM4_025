@@ -1,0 +1,33 @@
+# PBS flags
+queue: express
+project: g40
+walltime: 1:00:00
+ncpus: 1920
+mem: 3200GB
+jobname: MOM6_025
+
+#collate_walltime: 10:00:00
+#collate_mem: 16GB
+collate_walltime: 4:00:00
+collate_mem: 30GB
+collate_ncpus: 16
+collate_queue: express
+collate_flags: -n4 -z -m
+# collate_flags: -n4 -m
+
+# Model config
+model: mom6
+shortpath: /short/v45
+exe: MOM6
+input: 
+    - OM4_025
+    - /short/v45/pas561/mom/input/gfdl_nyf_1080
+    - /g/data/ua8/mom/mom6/OM4_025/mosaic.v20170622.unpacked/
+    - /g/data/ua8/mom/mom6/OM4_025/INPUT/
+    - /g/data1a/ua8/mom/mom6/obs
+collate: true
+
+# Misc
+stacksize: unlimited
+
+# ipm: 2.0.5
